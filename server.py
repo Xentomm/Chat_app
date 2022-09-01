@@ -1,7 +1,7 @@
 import socket
 import threading
 
-HOST = '127.0.0.1'
+HOST = "127.0.0.1"
 PORT = 1234
 LISTNER_LIMIT = 5
 
@@ -11,7 +11,7 @@ def main():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     try:
-        server.bind(HOST, PORT)
+        server.bind((HOST, PORT))
         print(f"Połączono serwer na {HOST} {PORT}")
     except:
         print(f"Nieudane połączenie {HOST} z portem {PORT}")

@@ -9,7 +9,7 @@ def main():
 
     # Połączenie z serwerem
     try:
-        client.connect(HOST, PORT)
+        client.connect((HOST, PORT))
         print(f"Połączono z serwerem")
     except:
         print(f"Nieudanie połaczenie z serwerem {HOST} {PORT}")

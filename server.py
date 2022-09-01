@@ -12,10 +12,11 @@ def main():
 
     try:
         server.bind(HOST, PORT)
+        print(f"Połączono serwer na {HOST} {PORT}")
     except:
         print(f"Nieudane połączenie {HOST} z portem {PORT}")
 
-    # Server limit
+    # Limit serwera
     server.listen(LISTNER_LIMIT)
 
     while 1:

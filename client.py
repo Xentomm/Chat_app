@@ -17,7 +17,7 @@ def listen_for_messgaes_from_server(client):
 
 def send_message_to_server(client):
     while 1:
-        message = input("Message: ")
+        message = input()
         if message != "":
             client.sendall(message.encode())
         else:

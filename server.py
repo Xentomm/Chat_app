@@ -35,6 +35,8 @@ def client_handler(client):
         username = client.recv(2048).decode('utf-8')
         if username != '':
             active_clients.append((username, client))
+            prompt_message = "SERVER: " + f"{username} został dodany do chatu"
+            send_messages_to_all(prompt_message)
             break
         else:
             print("Nazwa urzytkownika jest pusta")

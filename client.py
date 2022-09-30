@@ -40,11 +40,15 @@ def connect():
 
     threading.Thread(target = listen_for_messgaes_from_server, args = (client, )).start()
 
+    username_textbox.config(state = tk.DISABLED)
+    username_button.config(state = tk.DISABLED)
+
 
 def send_message():
     message = message_textbox.get()
     if message != "":
         client.sendall(message.encode())
+        message_textbox.delete(0, len(message))
     else:
         messagebox.showerror("Error", "Nie można wysłac pustej wiadomości")
 
